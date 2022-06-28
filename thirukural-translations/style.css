@@ -1,0 +1,29 @@
+.arrow-menu {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.arrow-menu button {
+  border: none;
+  background-color: transparent;
+  font-size: 80px;
+  margin-top: -200px;
+}
+.page-link.active {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .arrow-menu {
+    width: 50%;
+  }
+  .arrow-menu button {
+    margin-top: -100px;
+  }
+}
