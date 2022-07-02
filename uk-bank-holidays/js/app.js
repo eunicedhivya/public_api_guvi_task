@@ -1,5 +1,7 @@
 const url = "https://www.gov.uk/bank-holidays.json";
 
+const tbody = document.getElementById("tbody");
+
 let storeData;
 
 async function loadData() {
@@ -17,5 +19,26 @@ async function loadData() {
 }
 loadData();
 function showHolidays(areaname) {
-  console.log("storeData", storeData[areaname]);
+  console.log("storeData", storeData[areaname]["events"]);
+
+  // const tr = document.createElement("tr")
+  storeData[areaname]["events"].forEach((element) => {
+    createTable(element);
+  });
+}
+
+function createTable(rowdata) {
+  const tr = document.createElement("tr");
+  // rowdata.forEach(function (itm) {
+  //   const td = document.createElement("td");
+  //   td.innerHTML = "text";
+  //   tr.appendChild(td);
+  // });
+  for (let i = 0; i < rowdata.length; i++) {
+    console.log(rowdata[i]);
+    const td = document.createElement("td");
+    td.innerHTML = "text";
+    tr.appendChild(td);
+  }
+  tbody.appendChild(tr);
 }
